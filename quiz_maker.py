@@ -98,7 +98,17 @@ answers[3] = "We used variables to solve a problem"
 correct = 1;
 questions[3] = Question(question, answers, correct)
 
-
+take = True
 quiz = Quiz(questions)
+while take:
+    quiz.startQuiz()
+    choice = input("Would you like to take the quiz again? [Y/N]:  ")
+    if choice == "N":
+        take = False
+    elif choice == "Y":
+        take = True
+    else:
+        print("Invalid choice. Exiting quiz.")
+        take = False
 
-quiz.startQuiz()
+input("\n\nPress the enter key to exit.")
